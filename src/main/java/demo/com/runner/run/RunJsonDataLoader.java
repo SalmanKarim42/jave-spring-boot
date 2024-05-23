@@ -30,7 +30,7 @@ public class RunJsonDataLoader implements CommandLineRunner {
                 Runs allRuns = objectMapper.readValue(inputStream, Runs.class);
                 log.info("Reading {} runs from json file and saving in to db!", allRuns.runs().size());
                 runRepository.saveAll(allRuns.runs());
-                
+
             } catch (IOException e) {
                 throw new RuntimeException("Failed to load runs data", e);
             }

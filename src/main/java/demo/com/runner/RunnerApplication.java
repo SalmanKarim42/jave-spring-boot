@@ -1,17 +1,9 @@
 package demo.com.runner;
 
-import java.time.LocalDateTime;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import demo.com.runner.run.Location;
-import demo.com.runner.run.Run;
-import demo.com.runner.run.RunRepository;
 
 @SpringBootApplication
 public class RunnerApplication {
@@ -28,13 +20,14 @@ public class RunnerApplication {
 
     // @Bean
     // CommandLineRunner runner(RunRepository runRepository) {
-    //     return args -> {
+    // return args -> {
 
-    //         Run run = new Run(2, "Morning Run", LocalDateTime.now(), LocalDateTime.now().plusHours(1), 5, Location.OUTDOOR);
-			
-    //         runRepository.create(run);
-	// 		// log.info("Run: {}", run);
-    //     };
+    // Run run = new Run(2, "Morning Run", LocalDateTime.now(),
+    // LocalDateTime.now().plusHours(1), 5, Location.OUTDOOR);
+
+    // runRepository.create(run);
+    // // log.info("Run: {}", run);
+    // };
     // }
 
 }
