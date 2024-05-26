@@ -15,8 +15,10 @@ public record Run(
                 LocalDateTime completedOn,
                 @Positive Integer miles,
 
-                Location location,
-                @Version Integer version) {
+                Location location
+// ,
+// @Version Integer version
+) {
         public Run {
                 if (!completedOn.isAfter(startedOn))
                         throw new IllegalArgumentException("Completed date must be after started date");

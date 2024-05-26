@@ -1,17 +1,13 @@
 package demo.com.runner.run;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.time.LocalDateTime;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
-
-import jakarta.annotation.PostConstruct;
 
 @Repository
 public class JDBCClientRunRepository {
@@ -43,7 +39,8 @@ public class JDBCClientRunRepository {
     public void update(Run run, Integer id) {
         var updated = jdbcClient
                 .sql("update Run set title = ?, started_on = ?, completed_on = ?, miles = ?, location = ? where id = ?")
-                .params(List.of(run.title(), run.startedOn(), run.completedOn(), run.miles(), run.location().toString(), id))
+                .params(List.of(run.title(), run.startedOn(), run.completedOn(), run.miles(), run.location().toString(),
+                        id))
                 .update();
         Assert.state(updated == 1, "Failed to update Run " + run.title());
     }
